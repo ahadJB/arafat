@@ -16,6 +16,12 @@
                 text-shadow: 0 0 0;
             }
         }
+        .main__navbar.navbar-light .navbar-nav {
+            @include respond(tab-port) {
+               padding-left: 7px;
+            }
+        }
+        
     }
 }
 

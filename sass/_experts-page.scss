@@ -34,19 +34,30 @@
 }
 
 .expert-item {
+    overflow: hidden;
     display: block;
     margin-bottom: 50px;
+    @include respond(tab-land) {
+        text-align: center;
+    }
     .expert-img {
         float: left;
         max-width: 412px;
         width: 100%;
         border-radius: 13px;
         margin-right: 80px;
+        @include respond(tab-land) {
+            float: none;
+            margin: 0 auto;
+        }
     }
 }
 
 .expert-text {
-    padding: 90px;
+    padding-top: 90px;
+    @include respond(tab-land) {
+        padding-top: 50px;
+    }
     h4 {
         font-weight: 700;
         margin-bottom: 30px;

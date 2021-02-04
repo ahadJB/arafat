@@ -208,6 +208,9 @@ section {
         .header-section.header-style-3 .main__navbar.navbar-light .navbar-nav .nav-link {
           color: #000;
           text-shadow: 0 0 0; } }
+    @media only screen and (max-width: 61.93em) {
+      .header-section.header-style-3 .main__navbar.navbar-light .navbar-nav {
+        padding-left: 7px; } }
 
 .header-warp {
   max-width: 1600px;
@@ -703,18 +706,18 @@ section {
 
 .page-shape-1 {
   position: absolute;
-  top: -10%;
-  right: -10%; }
+  top: -19em;
+  right: -13em; }
 
 .page-shape-2 {
   position: absolute;
-  top: 14%;
-  left: -2%; }
+  top: 20em;
+  left: -3em; }
 
 .page-shape-3 {
   position: absolute;
-  bottom: 2%;
-  right: 5%; }
+  bottom: 4em;
+  right: 6em; }
 
 .experts-section {
   padding: 120px 0; }
@@ -744,17 +747,28 @@ section {
   margin-left: 0px; }
 
 .expert-item {
+  overflow: hidden;
   display: block;
   margin-bottom: 50px; }
+  @media only screen and (max-width: 75em) {
+    .expert-item {
+      text-align: center; } }
   .expert-item .expert-img {
     float: left;
     max-width: 412px;
     width: 100%;
     border-radius: 13px;
     margin-right: 80px; }
+    @media only screen and (max-width: 75em) {
+      .expert-item .expert-img {
+        float: none;
+        margin: 0 auto; } }
 
 .expert-text {
-  padding: 90px; }
+  padding-top: 90px; }
+  @media only screen and (max-width: 75em) {
+    .expert-text {
+      padding-top: 50px; } }
   .expert-text h4 {
     font-weight: 700;
     margin-bottom: 30px; }
