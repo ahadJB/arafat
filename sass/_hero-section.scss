@@ -1,0 +1,83 @@
+// Hero section
+
+.hero-section {
+    position: relative;
+    height: 1080px;
+    padding-top: 330px;
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    @include respond(tab-port) {
+       height: auto;
+       padding-top: 150px;
+    }
+}
+
+.hero-text {
+    padding-top: 140px;
+    @include respond(tab-port) {
+        padding-top: 80px;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    span {
+        font-size: 22px;
+        font-weight: 500;
+    }
+    h2 {
+        font-size: 66px;
+        font-weight: 900;
+        line-height: 1.5;
+        @include respond(phone) {
+           font-size: 40px;
+        }
+    }
+    p {
+        font-size: 20px;
+        opacity: 0.48;
+        margin-bottom: 40px;
+    }
+}
+
+.hero-photo {
+    margin-right: -16px;
+    @include respond(tab-port) {
+        padding-right: 30px;
+    }
+}
+.scroll-down-warp {
+    position: absolute;
+    left: 0;
+    bottom: 90px;
+    width: 100%;
+    @include respond(tab-port) {
+        padding-top: 50px;
+        position: relative;
+        bottom: 0;
+        margin-bottom: 50px;
+    }
+    @include respond(phone) {
+       text-align: center;
+     }
+}
+.scroll-down {
+    display: block;
+    width: 240px;
+    @include respond(phone) {
+        width: auto;
+        display: inline-block;
+    }
+    img {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    p {
+        display: inline-block;
+        font-weight: 500;
+        @include respond(phone-medium) {
+           display: none;
+        }
+    }
+    
+}

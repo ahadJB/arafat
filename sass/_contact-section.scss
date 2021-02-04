@@ -1,0 +1,63 @@
+
+.contact-section {
+    padding: 50px 0 80px;
+    .section-title {
+        @include respond(tab-port) {
+           margin-bottom: 50px;
+        }
+    }
+    @include respond(phone-medium) {
+        padding: 40px 0 40px;
+    }
+}
+.contact-info {
+    h5 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    a {
+        display: inline-block;
+        font-size: 44px;
+        font-weight: 500;
+        color: #000000;
+        margin-bottom: 30px;
+        @include respond(tab-land) {
+           font-size: 30px;
+        }
+        @include respond(tab-port) {
+            font-size: 30px;
+         }
+        @include respond(phone) {
+            font-size: 20px;
+         }
+    }
+}
+
+.contact-social {
+    margin-bottom: 50px;
+    a {
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        &:last-child{
+            margin-right: 0;
+        }
+        @include respond(tab-land) {
+            width: 60px;
+        }
+        @include respond(tab-port) {
+            width: 60px;
+        }
+        @include respond(phone) {
+            width: 50px;
+            margin-right: 15px;
+        }
+    }
+}
+
+.contact-shape-1 {
+    position: absolute;
+    right: 3%;
+    top: 15%;
+    width: 175px;
+}

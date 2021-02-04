@@ -1,0 +1,59 @@
+.experts-section  {
+    padding: 120px 0;
+}
+
+.expert-title  {
+    padding-top: 50px;
+    margin-bottom: 120px;
+    h2 {
+        font-size: 36px;
+        font-weight: 600
+    }
+}
+
+.expert-left {
+    max-width: 475px;
+    .search-form {
+        margin: 80px 0 60px;
+    }
+}
+
+.tag-area {
+    .tag-item {
+        display: inline-block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        background: #A956B6;
+        padding: 7px 15px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+}
+
+.expert-item {
+    display: block;
+    margin-bottom: 50px;
+    .expert-img {
+        float: left;
+        max-width: 412px;
+        width: 100%;
+        border-radius: 13px;
+        margin-right: 80px;
+    }
+}
+
+.expert-text {
+    padding: 90px;
+    h4 {
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    a {
+        font-size: 15px;
+        font-weight: 500;
+        color: $primary_color;
+    }
+}

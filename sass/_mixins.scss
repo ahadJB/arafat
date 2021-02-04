@@ -1,0 +1,215 @@
+// opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+// transition
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}// transition
+@mixin border-radius($man) {
+  -webkit-border-radius: $man;
+  -moz-border-radius: $man;
+  border-radius: $man;
+}
+
+
+@mixin gradient1() {
+  background: rgb(80,58,202);
+  background: -moz-linear-gradient(45deg, rgba(80,58,202,1) 0%, rgba(234,52,255,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(80,58,202,1) 0%, rgba(234,52,255,1) 100%);
+  background: linear-gradient(45deg, rgba(80,58,202,1) 0%, rgba(234,52,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#503aca",endColorstr="#ea34ff",GradientType=1);
+}
+
+@mixin gradient2() {
+  background: rgb(117,26,128);
+  background: -moz-linear-gradient(180deg, rgba(117,26,128,1) 0%, rgba(41,29,102,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(117,26,128,1) 0%, rgba(41,29,102,1) 100%);
+  background: linear-gradient(180deg, rgba(117,26,128,1) 0%, rgba(41,29,102,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#751a80",endColorstr="#291d66",GradientType=1);
+}
+
+
+
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// justify-content
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// align-content
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+}
+
+// Cross-axis Alignment
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+}
+
+// Flexbox center
+@mixin flexbox-center() {
+ @include flexbox();
+ @include justify-content(center);
+ @include align-items(center);
+}
+
+
+// transform
+// Browser Prefixes
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+// TranslateY
+@mixin translateY ($y) {
+  @include transform(translateY($y));
+  }
+// TranslateY
+@mixin translateX ($x) {
+  @include transform(translateX($x));
+  }
+
+
+// Box shadows
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;       
+          box-shadow: $shadow;
+}
+
+
+
+@mixin background($imgpath,$position: center,$size: cover,$repeat: no-repeat) {
+  background: {
+      image: url($imgpath);
+      position: $position;
+      repeat: $repeat;
+      size: $size;
+  }
+}
+@mixin transform_time($total_time) {
+  -webkit-transition: $total_time;
+  transition: $total_time;
+}
+@mixin placeholder {
+&.placeholder {
+  @content;
+}
+&:-moz-placeholder {
+  @content;
+}
+&::-moz-placeholder {
+  @content;
+}
+&::-webkit-input-placeholder {
+  @content;
+}
+}
+@mixin transition($args: all 0.6s ease 0s) {
+-webkit-transition: $args;
+-moz-transition: $args;
+-o-transition: $args;
+transition: $args;
+}
+
+@mixin keyframes ($animation-name) {
+@-webkit-keyframes #{$animation-name} {
+  @content;
+}
+@-moz-keyframes #{$animation-name} {
+  @content;
+}
+@-o-keyframes #{$animation-name} {
+  @content;
+}
+@keyframes #{$animation-name} {
+  @content;
+}
+}
+
+
+
+//MEDIA QUERY MANAGER
+/*
+0-600px:        Phone
+600-991px:      Tablet Portrait
+992-1200px:     Tablet Landscape
+[1200-1800px:]  is where our normal styles apply
+1800px + :      Big Desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-small {
+    @media only screen and (max-width: 21.25em){ @content };    //340px
+  } 
+  @if $breakpoint == phone-medium {
+    @media only screen and (max-width: 24.37em){ @content };    //390px
+  } 
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em){ @content };    //600px
+  }
+  @if $breakpoint == tab-middle {
+      @media only screen and (max-width: 47.93em){ @content };    //767px
+  }  
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 61.93em){ @content };    //991px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em){ @content };   //1200px
+  }
+  @if $breakpoint == desktop {
+      @media only screen and (max-width: 90.06em){ @content };   //1500px
+  }
+  @if $breakpoint == mid-desktop {
+      @media only screen and (max-width: 112em){ @content };   //max-1800px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112em){ @content };   //min-1800px
+  }
+
+  //for navbar control only 
+  
+  @if $breakpoint == tab-991 {
+    @media only screen and (max-width: 61.93em){ @content };    //991px
+  }
+}

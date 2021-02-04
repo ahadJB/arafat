@@ -1,0 +1,81 @@
+//Skill section
+.skills-section {
+    padding: 150px 0;
+    @include respond(tab-port) {
+        padding: 50px 0 80px;
+    }
+    .section-title {
+        @include respond(tab-port) {
+          margin-bottom: 70px;
+        }
+    }
+    @include respond(phone-medium) {
+        padding-bottom: 0;
+    }
+}
+.pt-50 {
+    padding-top: 100px;
+    @include respond(tab-middle) {
+       padding-top: 0;
+    }
+}
+.skill-card {
+    padding: 50px 15px 10px;
+    margin-bottom: 30px;
+    border-radius: 13px;
+    background: $white_color;
+    box-shadow: 18px 10px 29px rgba(90, 92, 116, 0.13);
+    background: $white_color;
+    transition: all 0.4s;
+    .skill-icon {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 40px;
+        max-width: 70px;
+        transition: all 0.4s;
+        .white-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+    }
+    h4 {
+        font-size: 23px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 17px;
+    }
+    &:hover {
+        background: $primary_color;
+        h4, p{
+            color: $white_color;
+        }
+        .skill-icon {
+            .dark-icon {
+                opacity: 0;
+            }
+            .white-icon {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.skill-shape-1 {
+    position: absolute;
+    top: 19%;
+    right: -19%;
+    @include respond(phone) {
+       display: none;
+    }
+}
+.skill-shape-2 {
+    position: absolute;
+    bottom: 13%;
+    left: 12%;
+}

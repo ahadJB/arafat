@@ -1,0 +1,111 @@
+/*---------------------
+   Helper CSS
+ -----------------------*/
+.section-title{
+    position: relative;
+    h2 {
+        position: relative;
+        font-size: 66px;
+        font-weight: 700;
+        display: inline-block;
+        text-align: left;
+        @include respond(phone) {
+            font-size: 40px;
+        }
+        span {
+            position: relative;
+            padding-right: 15px;
+            background: $white_color;
+            z-index: 1;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 7px;
+            right: 0;
+            top: 37px;
+            background: #000;
+        }
+    }
+}
+.section-title-whtie{
+    position: relative;
+    h2 {
+        display: inline-block;
+        font-size: 66px;
+        font-weight: 700;
+        color: $white_color;
+        position: relative;
+        @include respond(tab-port) {
+            color: #000;
+        }
+        @include respond(phone) {
+            font-size: 40px;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 103px;
+            height: 7px;
+            right: 0;
+            bottom: 35px;
+            background: $white_color;
+            @include respond(phone) {
+                width: 70px;
+                bottom: 20px;
+            }
+            @include respond(tab-port) {
+               background: #000;
+            }
+        }
+    }
+}
+
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.spad {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.text-white {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    li,
+    a {
+        color: #fff;
+    }
+}
+
+
+/*---------------------
+  Commom elements
+-----------------------*/
+.site__btn {
+    display: inline-block;
+	font-size: 18px;
+    padding: 28px 22px;
+    min-width: 225px;
+	color: $white_color;
+	line-height: 1;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+    border-radius: 80px;
+    text-transform: uppercase;
+    background: $primary_color;
+    &:hover {
+        color: $white_color;
+    }
+}

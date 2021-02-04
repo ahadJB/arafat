@@ -1,0 +1,81 @@
+// Header section
+.header-section {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    &.header-style-3 {
+        position: relative;
+        background: #85498F;
+        padding-bottom: 30px;
+        .main__navbar.navbar-light .navbar-nav .nav-link {
+            color: $white_color;
+            @include respond(tab-port) {
+                color: #000;
+                text-shadow: 0 0 0;
+            }
+        }
+    }
+}
+
+.header-warp {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.main__navbar {
+    padding-top: 40px;
+    &.bg-light {
+        background: transparent !important;
+    }
+    &.navbar-light {
+        .navbar-toggler {
+            background: #fff;
+        }
+        .navbar-nav {
+            @include respond(tab-port) {
+                background: $white_color;
+                border-radius: 8px;
+            }
+            .nav-item{
+                margin-right: 12px;
+                @include respond(desktop) {
+                    margin-right: 8px;
+                }
+                &.active {
+                    .nav-link {
+                        background: $primary_color;
+                        border-radius: 5px;
+                        color: $white_color;
+                    }
+                }
+                &.white-nav-item {
+                    .nav-link {
+                        color: $white_color;
+                        text-shadow: 0 0 6px #717171;
+                        @include respond(tab-port) {
+                            color: #000;
+                            text-shadow: 0 0 0;
+                        }
+                    }
+                }
+            }
+            .nav-link {
+                font-size: 16px;
+                font-weight: 600;
+                color: #000000;
+                padding: 13px 20px;
+                @include respond(desktop) {
+                    padding: 13px 5px;
+                }
+                @include respond(tab-land) {
+                    padding: 13px 5px; padding: 13px 5px;
+                }
+                @include respond(tab-port) {
+                    padding: 13px 15px;
+                }
+            }
+        }
+    }
+}

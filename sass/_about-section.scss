@@ -1,0 +1,59 @@
+// About section
+.about-section {
+    position: relative;
+    @include respond(tab-port) {
+        padding-top: 100px;
+     }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-image: url("../img/about.png");
+        background-size: cover;
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+}
+.about-text {
+    padding: 60px 0;
+    padding-left: 40px;
+    @include respond(tab-port) {
+        padding-left: 0;
+     }
+    p {
+        line-height: 2.2;
+        margin-bottom: 40px;
+    }
+    h5 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            font-size: 20px;
+            line-height: 2;
+        }
+    }
+}
+
+
+.about-shape-1 {
+    position: absolute;
+    top: 42px;
+    right: 31%;
+    width: 85px;
+}
+
+.about-shape-2 {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+}
